@@ -6,8 +6,8 @@
 */
 
 // Variables.
-let firstNumber: number
-let secondNumber: number
+let firstNumber: number = 0
+let secondNumber: number = 0
 
 // Set variables to be random
 firstNumber = randint(0, 99)
@@ -33,6 +33,13 @@ input.onButtonPressed(Button.B, function() {
 
 // Compare values of both of the variables.
 input.onGesture(Gesture.Shake, function() {
-    if (firstNumber < secondNumber)
-        basic.showString((firstNumber).toString, "<", (secondNumber).toString)
+    if (firstNumber < secondNumber){
+        basic.clearScreen()
+        basic.showString((firstNumber) + "<" + (secondNumber).toString())
+        basic.showIcon(IconNames.Sad)
+    } else (firstNumber > secondNumber) ;{
+        basic.clearScreen()
+        basic.showString((firstNumber) + ">" + (secondNumber).toString())
+        basic.showIcon(IconNames.Sad)
+    }
 })
